@@ -36,7 +36,7 @@ for command in commands:
       print "after"
       print current_routes
     else:
-      lost_routes.append(str(node['ip'])
+      lost_routes.append(str(node['ip']))
 
 print current_routes
 print lost_routes
