@@ -10,7 +10,7 @@ import time
 commands = ["netq show ip route leaf01 json"]
 failed_nodes = []
 
-check_routes = ["10.254.0.2","10.254.0.5","10.254.0.5","10.254.0.6","10.254.0.7"]
+check_routes = ["10.254.0.2/32","10.254.0.3/32","10.254.0.4/32","10.254.0.5/32","10.254.0.6/32","10.254.0.7/32"]
 found_routes = []
 lost_routes = []
 
