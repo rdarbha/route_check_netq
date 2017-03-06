@@ -7,7 +7,7 @@ import time
 # print redis_db.keys()
 
 # commands = ["ls -l","ls"]
-commands = ["netq show ip route leaf01"]
+commands = ["netq show ip route leaf01 json"]
 failed_nodes = []
 
 for command in commands:
@@ -15,10 +15,10 @@ for command in commands:
   result = subprocess.check_output(command, shell=True)
   print result
   parsed_json =  json.loads(result)
-  # print parsed_json
-  # print
-  # print parsed_json[0]
-  # print
+  print parsed_json
+  print
+  print parsed_json[0]
+  print
   print parsed_json[0][0]
   for node in parsed_json[0]:
     #print node['reason']
