@@ -20,9 +20,7 @@ for command in commands:
   print parsed_json[0]
   print
   print parsed_json[0][0]
+
   for node in parsed_json[0]:
     #print node['reason']
-    if node['reason'] != '':
-      #print node['reason']
-      failed_nodes.append(node)
-  print failed_nodes
+    print node['ip']
