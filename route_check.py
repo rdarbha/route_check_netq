@@ -29,12 +29,12 @@ for command in commands:
     #print node['reason']
     print node['ip']
     if str(node['ip']) in check_routes:
-      print "Found The Route"
-      print "before"
-      print check_routes
+      # print "Found The Route"
+      # print "before"
+      # print check_routes
       check_routes.remove(node['ip'])
-      print "after"
-      print check_routes
+      # print "after"
+      # print check_routes
     else:
       lost_routes.append(str(node['ip']))
 
