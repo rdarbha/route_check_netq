@@ -29,9 +29,9 @@ for command in commands:
     print "Current route check:" + node['ip']
     if str(node['ip']) in check_routes:
       print "Found The Route"
-      print "before" + check_routes
+      print "before" + str(check_routes)
       check_routes.remove(node['ip'])
-      print "after" + check_routes
+      print "after" + str(check_routes)
     else:
       lost_routes.append(str(node['ip']))
 
