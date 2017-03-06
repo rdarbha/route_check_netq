@@ -32,5 +32,5 @@ for command in commands:
     else:
       new_routes.append(node['ip'])
 
-print check_list
-print failed_nodes
+print current_routes
+print new_routes
