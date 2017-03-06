@@ -10,6 +10,9 @@ import time
 commands = ["netq show ip route leaf01 json"]
 failed_nodes = []
 
+current_routes = ["10.254.0.2","10.254.0.5","10.254.0.5","10.254.0.6","10.254.0.7"]
+new_routes = []
+
 for command in commands:
   # call(["ls", "-l"])
   result = subprocess.check_output(command, shell=True)
@@ -24,3 +27,10 @@ for command in commands:
   for node in parsed_json[0]:
     #print node['reason']
     print node['ip']
+    if node['ip'] in check_list:
+      check_list.remove(node['ip'])
+    else:
+      failed_nodes.append(node['ip'])
+
+print check_list
+print failed_nodes
