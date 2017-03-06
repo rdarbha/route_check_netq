@@ -28,9 +28,9 @@ for command in commands:
     #print node['reason']
     print node['ip']
     if node['ip'] in check_list:
-      check_list.remove(node['ip'])
+      current_routes.remove(node['ip'])
     else:
-      failed_nodes.append(node['ip'])
+      new_routes.append(node['ip'])
 
 print check_list
 print failed_nodes
