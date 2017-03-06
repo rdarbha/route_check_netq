@@ -27,7 +27,7 @@ for command in commands:
   for node in parsed_json[0]:
     #print node['reason']
     print node['ip']
-    if node['ip'] in check_list:
+    if node['ip'] in current_routes:
       current_routes.remove(node['ip'])
     else:
       new_routes.append(node['ip'])
