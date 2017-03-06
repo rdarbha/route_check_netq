@@ -28,7 +28,7 @@ for command in commands:
   for node in parsed_json[0]:
     #print node['reason']
     print node['ip']
-    if node['ip'] in check_routes:
+    if str(node['ip']) in check_routes:
       print "Found The Route"
       print "before"
       print check_routes
