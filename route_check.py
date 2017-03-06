@@ -10,7 +10,7 @@ import time
 commands = ["netq show ip route leaf01 json"]
 failed_nodes = []
 
-check_routes = ["10.254.0.2/32","10.254.0.3/32","10.254.0.4/32","10.254.0.5/32","10.254.0.6/32","10.254.0.7/32"]
+check_routes = ["10.254.0.2/32","10.254.0.3/32","10.254.0.4/32","10.254.0.5/32","10.254.0.6/32","10.254.0.7/32","10.254.0.8/32"]
 found_routes = []
 lost_routes = []
 
@@ -29,11 +29,11 @@ for command in commands:
     print "Current route check:" + node['ip']
     if str(node['ip']) in check_routes:
       print "Found The Route"
-      print "before" + str(check_routes)
+      print "before: " + str(check_routes)
       check_routes.remove(node['ip'])
-      print "after" + str(check_routes)
+      print "after: " + str(check_routes)
     else:
       lost_routes.append(str(node['ip']))
 
-print check_routes
-print lost_routes
+print "Routes not in current routing table: " + str(check_routes)
+print "Routes unexpectedly found in routing table: " + str(lost_routes)
