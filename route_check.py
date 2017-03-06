@@ -15,11 +15,11 @@ for command in commands:
   result = subprocess.check_output(command, shell=True)
   print result
   parsed_json =  json.loads(result)
-  # print parsed_json
-  # print
-  # print parsed_json[0]
-  # print
-  # print parsed_json[0][0]
+  print parsed_json
+  print
+  print parsed_json[0]
+  print
+  print parsed_json[0][0]
   for node in parsed_json[0]:
     #print node['reason']
     if node['reason'] != '':
