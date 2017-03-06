@@ -26,12 +26,12 @@ for command in commands:
   # print parsed_json[0][0]
 
   for node in parsed_json[0]:
-    print "Current route check:" + node['ip']
+    # print "Current route check:" + node['ip']
     if str(node['ip']) in check_routes:
-      print "Found The Route"
-      print "before: " + str(check_routes)
+      # print "Found The Route"
+      # print "before: " + str(check_routes)
       check_routes.remove(node['ip'])
-      print "after: " + str(check_routes)
+      # print "after: " + str(check_routes)
     else:
       lost_routes.append(str(node['ip']))
 
