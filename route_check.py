@@ -70,6 +70,7 @@ if __name__ == '__main__':
     print routes_list
     for route in routes_list:
       print route['ip']
+      print type(route['ip'])
       f.write(route['ip'])
       f.write("\n")
     print "Routes have been stored"
