@@ -4,7 +4,7 @@ import json
 import time
 import docopt
 
-"""Store and check route statements.
+"""
 
 Usage:
   route_check.py [--store | --check]
