@@ -1,8 +1,12 @@
 """
 
 Usage:
-  route_check.py store
-  route_check.py check
+  route_check.py store <node>
+  route_check.py check <node>
+  route_check.py (-h | --help)
+
+Options:
+  -h --help   Show this screen
 
 """
 
@@ -14,8 +18,12 @@ import docopt
 
 arguments = docopt.docopt(__doc__)
 
-commands = ["netq show ip route leaf01 json"]
+# commands = ["netq show ip route leaf01 json"]
+commands = ["netq show ip route "]
+commands.append(arguments['<node>'])
+commands.append(" json")
 
+print commands
 #Commented out because reading in routes from file now
 # stored_routes = ["10.254.0.2/32","10.254.0.3/32","10.254.0.4/32","10.254.0.5/32","10.254.0.6/32","10.254.0.7/32","10.254.0.8/32"]
 
