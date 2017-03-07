@@ -1,9 +1,3 @@
-import redis
-import subprocess
-import json
-import time
-import docopt
-
 """
 
 Usage:
@@ -14,6 +8,12 @@ Options:
   --check
 
 """
+
+import redis
+import subprocess
+import json
+import time
+import docopt
 
 arguments = docopt.docopt(__doc__)
 
