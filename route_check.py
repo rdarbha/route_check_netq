@@ -39,12 +39,16 @@ def CheckRoutes(parsed_json, stored_routes):
     else:
       lost_routes.append(str(node['ip']))
 
-  print "Routes missing from current routing table: "
-  for route in stored_routes:
-    print route
-  print "Additional routes unexpectedly found in routing table: "
-  for route in lost_routes:
-    print route
+  if len(stored_routes) != 0:
+    print "Routes missing from current routing table: "
+    for route in stored_routes:
+      print route
+  if len(lost_routes) != 0:
+    print "Additional routes unexpectedly found in routing table: "
+    for route in lost_routes:
+      print route
+  if len(stored_routes) == 0 and len(lost_routes) == 0:
+    print "All routes match!"
 
 if __name__ == '__main__':
   arguments = docopt.docopt(__doc__)
