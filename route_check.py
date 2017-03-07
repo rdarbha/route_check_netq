@@ -19,9 +19,7 @@ import docopt
 arguments = docopt.docopt(__doc__)
 
 # commands = ["netq show ip route leaf01 json"]
-commands = ["netq show ip route "]
-commands.append(arguments['<node>'])
-commands.append(" json")
+commands = ["netq show ip route " + arguments['<node>'] + " json"]
 
 print commands
 #Commented out because reading in routes from file now
