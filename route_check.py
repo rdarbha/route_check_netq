@@ -1,11 +1,8 @@
 """
 
 Usage:
-  route_check.py [--store | --check]
-
-Options:
-  --store
-  --check
+  route_check.py store
+  route_check.py check
 
 """
 
