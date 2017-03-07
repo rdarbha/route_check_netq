@@ -16,53 +16,35 @@ import json
 import time
 import docopt
 
-arguments = docopt.docopt(__doc__)
+if __name__ == '__main__':
+  arguments = docopt.docopt(__doc__)
 
-# commands = ["netq show ip route leaf01 json"]
-command = "netq show ip route " + arguments['<node>'] + " json"
-# commands = ["netq show ip route " + arguments['<node>'] + " json"]
+  command = "netq show ip route " + arguments['<node>'] + " json"
 
-#Commented out because reading in routes from file now
-# stored_routes = ["10.254.0.2/32","10.254.0.3/32","10.254.0.4/32","10.254.0.5/32","10.254.0.6/32","10.254.0.7/32","10.254.0.8/32"]
+  #Commented out because reading in routes from file now
+  # stored_routes = ["10.254.0.2/32","10.254.0.3/32","10.254.0.4/32","10.254.0.5/32","10.254.0.6/32","10.254.0.7/32","10.254.0.8/32"]
 
-found_routes = []
-lost_routes = []
+  found_routes = []
+  lost_routes = []
 
-# Read in file. Each line is a route statement
-fname = arguments['<node>']
+  # Read in file. Each line is a route statement
+  fname = arguments['<node>']
 
-f = open(fname)
+  f = open(fname)
 
-if arguments['check']:
-  stored_routes = f.readlines()
-  stored_routes = [x.strip() for x in stored_routes]
-  command_output = GetCommandOutput(command)
-  CheckRoutes(command_output, stored_routes)
+  if arguments['check']:
+    stored_routes = f.readlines()
+    stored_routes = [x.strip() for x in stored_routes]
+    command_output = GetCommandOutput(command)
+    CheckRoutes(command_output, stored_routes)
 
-if arguments['store']:
-  print "Implement store functionality"
-
-# if arguments['store']
-# with open(fname) as f:
-#   stored_routes = f.write()
-
-# print stored_routes
+  if arguments['store']:
+    print "Implement store functionality"
 
 def GetCommandOutput(command):
 
   result = subprocess.check_output(command, shell=True)
   parsed_json = json.loads(result)
-
-  #This was the way to run multiple commands using a list of commands
-  # for command in commands:
-  #   result = subprocess.check_output(command, shell=True)
-  #   # print result
-  #   parsed_json =  json.loads(result)
-    # print parsed_json
-    # print
-    # print parsed_json[0]
-    # print
-    # print parsed_json[0][0]
 
   #Need to return parsed_json[0] because netq nests json in two arrays
   return parsed_json[0]
