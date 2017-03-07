@@ -29,9 +29,7 @@ def CheckRoutes(parsed_json, stored_routes):
   found_routes = []
   lost_routes = []
 
-  print prased_json
-
-  for node in parsed_json[0]:
+  for node in parsed_json:
     # print "Current route check:" + node['ip']
     if str(node['ip']) in stored_routes:
       # print "Found The Route"
