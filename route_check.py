@@ -27,7 +27,7 @@ lost_routes = []
 # Read in file. Each line is a route statement
 fname = "route_list"
 
-if arguments['check']
+if arguments['check']:
   with open(fname) as f:
     stored_routes = f.readlines()
 
