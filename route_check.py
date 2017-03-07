@@ -42,9 +42,6 @@ def CheckRoutes(parsed_json, stored_routes):
   print "Routes not in current routing table: " + str(stored_routes)
   print "Routes unexpectedly found in routing table: " + str(lost_routes)
 
-def ReturnRoutes(parsed_json):
-
-
 if __name__ == '__main__':
   arguments = docopt.docopt(__doc__)
 
