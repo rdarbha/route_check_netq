@@ -42,6 +42,9 @@ def CheckRoutes(parsed_json, stored_routes):
   print "Routes not in current routing table: " + str(stored_routes)
   print "Routes unexpectedly found in routing table: " + str(lost_routes)
 
+def ReturnRoutes(parsed_json):
+
+
 if __name__ == '__main__':
   arguments = docopt.docopt(__doc__)
 
@@ -56,13 +59,21 @@ if __name__ == '__main__':
   # Read in file. Each line is a route statement
   fname = arguments['<node>']
 
-  f = open(fname)
+
 
   if arguments['check']:
+    f = open(fname, 'r')
     stored_routes = f.readlines()
     stored_routes = [x.strip() for x in stored_routes]
     command_output = GetCommandOutput(command)
     CheckRoutes(command_output, stored_routes)
 
   if arguments['store']:
+    f = open(fname, 'w')
     print "Implement store functionality"
+    routes_list = GetCommandOutput(command)
+    for node in command_output:
+      f.write(route_list['ip'])
+      f.write("\n")
+
+  f.close()
