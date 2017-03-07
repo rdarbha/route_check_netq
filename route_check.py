@@ -56,8 +56,6 @@ if __name__ == '__main__':
   # Read in file. Each line is a route statement
   fname = arguments['<node>']
 
-
-
   if arguments['check']:
     f = open(fname, 'r')
     stored_routes = f.readlines()
@@ -67,10 +65,12 @@ if __name__ == '__main__':
 
   if arguments['store']:
     f = open(fname, 'w')
-    print "Implement store functionality"
+
     routes_list = GetCommandOutput(command)
+    print routes_list
     for route in routes_list:
+      print route['ip']
       f.write(route['ip'])
       f.write("\n")
-
+    print "Routes have been stored"
   f.close()
