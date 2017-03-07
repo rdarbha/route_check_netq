@@ -9,6 +9,8 @@ commands = ["netq show ip route leaf01 json"]
 found_routes = []
 lost_routes = []
 
+fname = "route_list"
+
 with open(fname) as f:
   stored_routes = f.readlines()
 
