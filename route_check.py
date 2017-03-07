@@ -30,7 +30,7 @@ for command in commands:
 
   for node in parsed_json[0]:
     # print "Current route check:" + node['ip']
-    if str(node['ip']) in check_routes:
+    if str(node['ip']) in stored_routes:
       # print "Found The Route"
       # print "before: " + str(check_routes)
       stored_routes.remove(node['ip'])
