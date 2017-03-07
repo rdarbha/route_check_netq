@@ -69,8 +69,8 @@ if __name__ == '__main__':
     f = open(fname, 'w')
     print "Implement store functionality"
     routes_list = GetCommandOutput(command)
-    for node in command_output:
-      f.write(route_list['ip'])
+    for route in routes_list:
+      f.write(route['ip'])
       f.write("\n")
 
   f.close()
