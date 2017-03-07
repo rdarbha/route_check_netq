@@ -7,11 +7,9 @@ import docopt
 """Store and check route statements.
 
 Usage:
-  route_check.py store <node>
-  route_check.py check <node>
+  route_check.py store
+  route_check.py check
 
---store   Take the current route table and store it
---check   Compare the current route table against the stored version
 """
 
 arguments = docopt.docopt(__doc__)
