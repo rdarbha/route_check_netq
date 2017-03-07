@@ -7,8 +7,11 @@ import docopt
 """Store and check route statements.
 
 Usage:
-  route_check.py store
-  route_check.py check
+  route_check.py [--store | --check]
+
+Options:
+  --store
+  --check
 
 """
 
